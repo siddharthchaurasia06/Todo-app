@@ -1,0 +1,26 @@
+addtask:
+  replicaCount: 2
+  image: acrtodoappsiddharth1.azurecr.io/addtask:v1
+  containerPort: 8000
+  serviceport: 80
+  ingressClassName: nginx
+  host: add-task-api.6weathers.com
+  value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:siddharthsql-dev.database.windows.net,1433;Database=siddharthdb-dev;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;" 
+
+gettask:
+  replicaCount: 2
+  image: acrtodoappsiddharth1.azurecr.io/gettask:v1
+  containerPort: 8000
+  servicePort: 80
+  ingressClassName: nginx
+  host: get-tasks-api.6weathers.com
+  value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:siddharthsql-dev.database.windows.net,1433;Database=siddharthdb-dev;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+
+deletetask:
+  replicaCount: 2
+  image: acrtodoappsiddharth1.azurecr.io/deletetask:v1
+  containerPort: 8000
+  serviceport: 80
+  ingressClassName: nginx
+  host: delete-task-api.6weathers.com
+  value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:siddharthsql-dev.database.windows.net,1433;Database=siddharthdb-dev;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
