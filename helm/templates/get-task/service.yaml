@@ -8,4 +8,4 @@ spec:
     app: {{ .Release.Name }}-todo-get-task-api
   ports:
     - port: 80
-      targetPort: {{ .Values.gettask.containerPort }}
+      targetPort: 8000
