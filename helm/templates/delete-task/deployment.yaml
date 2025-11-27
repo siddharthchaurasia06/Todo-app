@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-todo-delete-tasks-api
+spec:
+  replicas: {{ .Values.deletetask.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-todo-delete-tasks-api
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-todo-delete-tasks-api
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-todo-delete-tasks-api
+        image: acrtodoappsiddharth1.azurecr.io/deletetask:v1
+        ports:
+        - containerPort: 8000
+        # env: 
+        # - name: CONNECTION_STRING
+        #   value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-001.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
