@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: {{ .Values.gettask.ingressClassName }}
   rules:
-  - host: {{ .Release.Name }}-get-tasks-api.6weathers.com
+  - host: {{ .Values.gettask.host }}
     http:
       paths:
       - pathType: Prefix
