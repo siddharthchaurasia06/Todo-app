@@ -9,7 +9,7 @@ addtask:
 
 gettask:
   replicaCount: 2
-  image: acrtodoappsiddharth1.azurecr.io/gettask:v1
+  image: acrtodoappsiddharth1.azurecr.io/gettasks:v1
   containerPort: 8000
   servicePort: 80
   ingressClassName: nginx
