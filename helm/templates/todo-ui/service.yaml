@@ -7,5 +7,5 @@ spec:
   selector:
     app: todo-ui
   ports:
-    - port: 80
-      targetPort: 80
+    - port: {{ .Values.Ui.serviceport }}
+      targetPort: {{ .Values.Ui.containerPort }}

@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: ui.6weathers.com
+  - host: {{ .Values.Ui.host }}
     http:
       paths:
       - pathType: Prefix
@@ -14,5 +14,5 @@ spec:
           service:
             name: todo-ui
             port: 
-              number: 80
+              number: {{ .Values.Ui.serviceport }}
 

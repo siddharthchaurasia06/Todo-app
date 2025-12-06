@@ -24,3 +24,13 @@ deletetask:
   ingressClassName: nginx
   host: delete-task-api.6weathers.com
   value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:siddharthsql-dev.database.windows.net,1433;Database=siddharthdb-dev;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+
+
+  Ui:  
+    replicaCount: 2
+    image: acrtodoappsiddharth1.azurecr.io/uitodo:v1
+    containerPort: 80
+    serviceport: 80
+    ingressClassName: nginx
+    host: ui.6weathers.com
+    

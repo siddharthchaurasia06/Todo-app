@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: todo-ui
 spec:
-  replicas: 2
+  replicas: {{ .Values.Ui.replicaCount }}
   selector:
     matchLabels:
       app: todo-ui
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todo-ui
-        image: acrtodoappsiddharth1.azurecr.io/uitodo:v1
+        image: {{ .Values.Ui.image }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.Ui.containerPort }}
